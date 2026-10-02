@@ -6,7 +6,7 @@ Every morning, Grid forecasts the next day's electricity demand, solar output an
 
 **Live: [ira-t.net/grid](https://ira-t.net/grid/)**
 
-[![The Grid dashboard](grid_screenshot.png)](https://ira-t.net/grid/)
+<a href="https://ira-t.net/grid/"><img src="grid_screenshot.png" align="right" width="420" alt="The Grid dashboard"></a>
 Python · PostgreSQL · scikit-learn · Plotly Dash · AWS Lightsail
 
 ## Why these three numbers
