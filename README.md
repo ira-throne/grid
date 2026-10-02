@@ -17,20 +17,25 @@ The dashboard is built around that cycle:
 | Section | What it shows |
 |---|---|
 | **Right now** | Where California's power is coming from, every 5 minutes, with the clean share and an estimated carbon intensity |
+
 ![Right now](img/right_now.png)
 
 | **Day ahead forecast** | Tomorrow's demand, solar and wind from the Grid model, next to CAISO's forecast and what actually happened, with a running scorecard |
+
 TO DO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 | **Curtailment and negative prices** | How much solar and wind gets switched off, and how closely that tracks the hours when prices fall below $0 |
+
 ![Curtailment and negative prices](img/curtailment.png)
 
 
 | **When to plug in** | The cleanest (or cheapest) 3 hour window in the next day and a half to charge an EV or run appliances, for Southern California Edison customers |
+
 ![When to plug in](img/when_plug_in.png)
 
 
 | **Wholesale prices** | Real time prices every 5 minutes and the day ahead market's prices for tomorrow |
+
 ![Wholesale prices](img/wholesale_prices.png)
 
 ## Results so far
