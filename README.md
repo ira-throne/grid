@@ -6,7 +6,6 @@ Every morning, Grid forecasts the next day's electricity demand, solar output an
 
 **Live: [ira-t.net/grid](https://ira-t.net/grid/)**
 
-<a href="https://ira-t.net/grid/"><img src="grid_screenshot.png" align="right" width="420" alt="The Grid dashboard"></a>
 Python · PostgreSQL · scikit-learn · Plotly Dash · AWS Lightsail
 
 ## Why these three numbers
@@ -55,6 +54,7 @@ flowchart LR
 Everything runs on one $7 a month AWS Lightsail server: Postgres, cron, gunicorn and nginx with HTTPS.
 
 ## Decisions that mattered
+<a href="https://ira-t.net/grid/"><img src="grid_screenshot.png" align="right" width="300" alt="The Grid dashboard"></a>
 
 - **No peeking at the future.** Every model input is something known the morning before: weather forecasts stored as they were issued (never observed weather), and history at least 48 hours old. Training on observed weather would make the backtest look better than any live forecast could be.
 - **Grading against the right actuals.** CAISO's OASIS "actual" demand runs up to 2,500 MW above the demand its day ahead forecast covers, which made every model look biased. Hourly demand actuals come from CAISO's Today's Outlook instead, which pairs actual demand with the matching forecast.
