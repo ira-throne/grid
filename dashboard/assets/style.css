@@ -1,0 +1,112 @@
+/* Dash loads every file in assets/ automatically. */
+:root {
+  color-scheme: dark;
+  --page: #0e0f12;
+  --surface: #16181d;
+  --ink: #f2f1ec;
+  --ink-2: #b4b3ad;
+  --muted: #7d7c77;
+  --border: rgba(255, 255, 255, 0.10);
+  --accent: #2ad4c0;
+  --good: #0ca30c;
+  --warning: #fab219;
+  --critical: #d03b3b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.page { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+
+.header {
+  display: flex; flex-wrap: wrap; gap: 12px 24px;
+  justify-content: space-between; align-items: flex-end; margin-bottom: 20px;
+}
+h1 { margin: 0 0 4px; font-size: 28px; }
+.home-link { display: inline-block; margin-bottom: 8px; font-size: 13px; color: var(--muted); text-decoration: none; }
+.home-link:hover { color: var(--accent); }
+.lede { margin: 0; color: var(--ink-2); }
+
+.status-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: 999px; font-size: 13px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--ink-2);
+}
+.chip-icon {
+  display: inline-grid; place-items: center; width: 16px; height: 16px;
+  border-radius: 50%; font-size: 10px; font-weight: 700; color: #fff;
+}
+.chip-good .chip-icon { background: var(--good); }
+.chip-warning .chip-icon { background: var(--warning); color: #0e0f12; }
+.chip-critical .chip-icon { background: var(--critical); }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px; margin-bottom: 20px;
+}
+.card h2 { margin: 0 0 4px; font-size: 20px; }
+.card h3 { margin: 20px 0 4px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.card-sub { margin: 0 0 16px; color: var(--ink-2); font-size: 14px; }
+
+.tiles {
+  display: grid; gap: 12px; margin: 12px 0 8px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.tile { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+.tile-label { font-size: 13px; color: var(--ink-2); }
+.tile-value { font-size: clamp(18px, 5vw, 24px); font-weight: 600; margin: 4px 0 2px; }
+.tile-sub { font-size: 12px; color: var(--muted); }
+
+.toggle label { margin-right: 16px; font-size: 14px; color: var(--ink-2); cursor: pointer; }
+.toggle input { margin-right: 6px; }
+
+.footer { color: var(--muted); font-size: 12px; text-align: center; }
+
+.muted { color: var(--muted); }
+.note { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.callout {
+  margin: 12px 0 4px; padding: 10px 14px; border-radius: 10px; font-size: 15px;
+  border: 1px solid rgba(42, 212, 192, 0.35); background: rgba(42, 212, 192, 0.08);
+}
+.callout strong { color: var(--accent); }
+
+table.score { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.score th {
+  text-align: left; font-weight: 500; color: var(--muted); font-size: 12px;
+  padding: 6px 10px; border-bottom: 1px solid var(--border);
+}
+table.score td { padding: 8px 10px; border-bottom: 1px solid var(--border); color: var(--ink-2); }
+table.score th:not(:first-child), table.score td:not(:first-child) {
+  text-align: right; font-variant-numeric: tabular-nums;
+}
+table.score tr.best td { color: var(--ink); font-weight: 600; }
+table.score tr.best td:first-child::before { content: "● "; color: var(--accent); }
+@media (max-width: 520px) {
+  table.score th:nth-child(5), table.score td:nth-child(5) { display: none; }
+}
+
+/* Dark theme for Dash's own controls (dropdown, radio buttons). Dash 4
+   reads its colors from these variables. */
+:root {
+  --Dash-Fill-Inverse-Strong: #1d2027;
+  --Dash-Text-Strong: var(--ink);
+  --Dash-Text-Weak: var(--ink-2);
+  --Dash-Text-Primary: var(--accent);
+  --Dash-Text-Disabled: var(--muted);
+  --Dash-Stroke-Strong: rgba(255, 255, 255, 0.22);
+  --Dash-Stroke-Weak: rgba(255, 255, 255, 0.10);
+  --Dash-Fill-Interactive-Strong: var(--accent);
+  --Dash-Fill-Interactive-Weak: rgba(42, 212, 192, 0.15);
+  --Dash-Fill-Primary-Hover: rgba(255, 255, 255, 0.06);
+  --Dash-Fill-Primary-Active: rgba(255, 255, 255, 0.10);
+  --Dash-Fill-Disabled: #2a2d35;
+  --Dash-Shading-Weak: rgba(0, 0, 0, 0.3);
+  --Dash-Shading-Strong: rgba(0, 0, 0, 0.5);
+}

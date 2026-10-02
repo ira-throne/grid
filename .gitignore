@@ -1,0 +1,12 @@
+.env
+__pycache__/
+.venv/
+logs/
+models/
+*~
+
+# Personal home page (ira-t.net), kept out of the repo
+homepage/
+
+# Server deployment files, kept out of the repo
+deploy/
