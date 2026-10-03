@@ -14,15 +14,32 @@ Python · PostgreSQL · scikit-learn · Plotly Dash · AWS Lightsail
 
 California's grid now swings between two problems every day. On sunny afternoons there is more solar power than the state can use, so prices drop below zero and solar farms are told to switch off (curtailment). A few hours later the sun sets, demand peaks, and gas plants and imports have to fill the gap. How bad either problem gets depends on three things: how much power people will use, how much the sun will produce, and how much the wind will produce. Forecasting those well a day ahead is what lets the grid plan for both.
 
-The dashboard is built around that cycle:
+The dashboard is built around that cycle.
 
-| Section | What it shows |
-|---|---|
-| **Right now** | Where California's power is coming from, every 5 minutes, with the clean share and an estimated carbon intensity |
-| **Day ahead forecast** | Tomorrow's demand, solar and wind from the Grid model, next to CAISO's forecast and what actually happened, with a running scorecard |
-| **Curtailment and negative prices** | How much solar and wind gets switched off, and how closely that tracks the hours when prices fall below $0 |
-| **When to plug in** | The cleanest (or cheapest) 3 hour window in the next day and a half to charge an EV or run appliances, for Southern California Edison customers |
-| **Wholesale prices** | Real time prices every 5 minutes and the day ahead market's prices for tomorrow |
+### Right now
+Where California's power is coming from, every 5 minutes, with the clean share and an estimated carbon intensity.
+
+![Right now](img/right_now.png)
+
+### Day ahead forecast
+Tomorrow's demand, solar and wind from the Grid model, next to CAISO's forecast and what actually happened, with a running scorecard.
+
+![Day ahead forecast](img/day_ahead.png)
+
+### Curtailment and negative prices
+How much solar and wind gets switched off, and how closely that tracks the hours when prices fall below $0.
+
+![Curtailment and negative prices](img/curtailment.png)
+
+### When to plug in
+The cleanest (or cheapest) 3 hour window in the next day and a half to charge an EV or run appliances, for Southern California Edison customers.
+
+![When to plug in](img/when_plug_in.png)
+
+### Wholesale prices
+Real time prices every 5 minutes and the day ahead market's prices for tomorrow.
+
+![Wholesale prices](img/wholesale_prices.png)
 
 ## Results
 
