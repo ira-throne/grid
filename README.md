@@ -6,6 +6,8 @@ Every morning, Grid forecasts the next day's electricity demand, solar output an
 
 **Live: [ira-t.net/grid](https://ira-t.net/grid/)**
 
+[![The Grid dashboard](dashboard.png)](https://ira-t.net/grid/)
+
 Python · PostgreSQL · scikit-learn · Plotly Dash · AWS Lightsail
 
 ## Why these three numbers
@@ -39,17 +41,9 @@ Real time prices every 5 minutes and the day ahead market's prices for tomorrow.
 
 ![Wholesale prices](img/wholesale_prices.png)
 
-## Results so far
+## Results
 
-Backtest on 60 held out days (Aug 3 to Oct 1, 2026). Error is the total miss as a share of the total actual (normalized MAE); a plain percentage error would divide by zero for solar at night.
-
-| | Grid model | CAISO day ahead | Same hour last week |
-|---|---|---|---|
-| Demand | 3.3% | 2.1% | 12.2% |
-| Solar | **9.7%** | 9.8% | 14.6% |
-| Wind | 28.9% | 18.3% | 46.5% |
-
-Solar already matches CAISO's own forecast. Demand and wind trail it: CAISO forecasts wind using data from every individual wind farm, which isn't public. The "same hour last week" column is the baseline any useful model has to beat. The dashboard replaces these backtest numbers with live scores once two weeks of daily forecasts have been graded.
+The dashboard's scorecard grades the Grid model, CAISO's day ahead forecast and a "same hour last week" baseline on exactly the same hours, using the total miss as a share of the total actual (normalized MAE; a plain percentage error would divide by zero for solar at night). Until two weeks of daily forecasts have been graded it shows a backtest on held out days, then live scores replace it. The scorecard on [ira-t.net/grid](https://ira-t.net/grid/) is the current result.
 
 ## How it works
 
