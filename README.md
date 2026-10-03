@@ -109,7 +109,6 @@ Everything runs on one $7 a month AWS Lightsail server: Postgres, cron, gunicorn
 | `08_forecast.sql` | forecast storage, comparison and scorecard views |
 | `09_california_views.sql` | right now, curtailment, negative price and plug in views |
 | `10_sunzia.sql` | New Mexico weather stations for SunZia wind |
-| `11_cleanup.sql` | one time: removes tables from an earlier US wide version of the project |
 
 </details>
 

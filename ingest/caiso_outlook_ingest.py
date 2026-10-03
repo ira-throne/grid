@@ -9,9 +9,9 @@ page, with one row per 5 minutes in Pacific time:
 
 Today's files live under /outlook/current/, finished days under
 /outlook/history/YYYYMMDD/. Both land in grid.fact_caiso_outlook_5min.
-This is what the dashboard's "right now" numbers read; it's fresher and
-finer than EIA's hourly feed. Each run also rolls the 5 minute demand up
-into hourly demand actuals for the forecast (see HOURLY_DEMAND_SQL).
+This is what the dashboard's "right now" numbers read. Each run also
+rolls the 5 minute demand up into hourly demand actuals for the
+forecast (see HOURLY_DEMAND_SQL).
 
 Usage:
   python caiso_outlook_ingest.py                          # today, plus yesterday if incomplete
