@@ -118,20 +118,20 @@ Everything runs on one $7 a month AWS Lightsail server: Postgres, cron, gunicorn
    ```
    sudo apt install postgresql python3-venv
    sudo -u postgres createuser --superuser $USER
-   createdb gridpulse
+   createdb grid
    ```
 2. Python environment and config:
    ```
    python3 -m venv .venv
    .venv/bin/python -m pip install -r requirements.txt
-   cp .env.example .env    # DATABASE_URL=postgresql:///gridpulse
+   cp .env.example .env    # DATABASE_URL=postgresql:///grid
    ```
 3. Schema (each file is safe to run again):
    ```
    for f in sql/01_schema.sql sql/03_caiso_weather.sql sql/04_dashboard_views.sql sql/06_california.sql \
             sql/07_california_data.sql sql/08_forecast.sql sql/09_california_views.sql \
             sql/10_sunzia.sql; do
-       psql -d gridpulse -f "$f"; done
+       psql -d grid -f "$f"; done
    ```
 4. History (one time; these can run at the same time, and most of the wait is polite pauses between requests):
 
@@ -145,6 +145,6 @@ Everything runs on one $7 a month AWS Lightsail server: Postgres, cron, gunicorn
    | `.venv/bin/python ingest/caiso_ingest.py --backfill-days 30` | 5 minute prices | ~3 min |
 
 5. Train the models and write the backtest: `.venv/bin/python -m forecast.train --save`
-6. Check the loads: `psql -d gridpulse -f sql/02_sanity_checks.sql`
+6. Check the loads: `psql -d grid -f sql/02_sanity_checks.sql`
 7. Schedule everything: `crontab scripts/crontab.txt` (logs go to `logs/`)
 8. Start the dashboard: `.venv/bin/python -m dashboard.app`, then open http://127.0.0.1:8050

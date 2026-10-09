@@ -11,7 +11,7 @@ cd "$(dirname "$0")/.."
 JOB="$1"; shift
 mkdir -p logs
 # Lock name includes the arguments, so "caiso" and "caiso --market DAM" don't block each other
-LOCK="/tmp/gridpulse-${JOB}$(printf '%s' "$*" | tr -c 'a-zA-Z0-9' '_').lock"
+LOCK="/tmp/grid-${JOB}$(printf '%s' "$*" | tr -c 'a-zA-Z0-9' '_').lock"
 case "$JOB" in
     forecast) CMD=(.venv/bin/python -m forecast.run "$@") ;;
     train)    CMD=(.venv/bin/python -m forecast.train "$@") ;;

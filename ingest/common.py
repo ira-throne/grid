@@ -1,4 +1,4 @@
-"""Shared helpers for Grid Pulse ingest scripts: DB connection, watermarks, run log."""
+"""Shared helpers for Grid ingest scripts: DB connection, watermarks, run log."""
 
 from __future__ import annotations
 
